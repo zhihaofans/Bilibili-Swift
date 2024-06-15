@@ -8,17 +8,15 @@ import Alamofire
 import Foundation
 
 class LoginService {
-    func getWebLoginQrcode(callback: @escaping (String)->Void, fail: @escaping (String)->Void) {
+    func getWebLoginQrcode(callback: @escaping (LoginQrcodeData)->Void, fail: @escaping (String)->Void) {
         AF.request("https://passport.bilibili.com/x/passport-login/web/qrcode/generate").responseString { response in
             do {
                 switch response.result {
                 case let .success(value):
-                    debugPrint(value)
-                    let fakeJsonStr = value
-                    let loginResult = try JSONDecoder().decode(LoginQrcodeResult.self, from: fakeJsonStr.data(using: .utf8)!)
+                    let loginResult = try JSONDecoder().decode(LoginQrcodeResult.self, from: value.data(using: .utf8)!)
                     debugPrint(loginResult.code)
-                    if loginResult.code == 0, loginResult.data.qrcode_key.isNotEmpty {
-                        callback(loginResult.data.qrcode_key)
+                    if loginResult.code == 0 {
+                        callback(loginResult.data)
                     } else {
                         fail(loginResult.message)
                     }
@@ -33,28 +31,26 @@ class LoginService {
         }
     }
 
-    func checkWebLoginQrcode(qrcodeKey: String, callback: @escaping (String)->Void, fail: @escaping (String)->Void) {
-        AF.request("https://passport.bilibili.com/x/passport-login/web/qrcode/poll?qrcode_key=" + qrcodeKey).responseJSON { response in
-            switch response.result {
-            case .success:
-                debugPrint(response.value as Any)
-                if let dict = response.value as? [String: Any] {
-                    if let data = dict["data"] as? [String: Any] {
-                        if let url = data["url"] as? String {
-                            callback(url)
-                        } else {
-                            fail("返回空白网址")
-                        }
+    func checkWebLoginQrcode(qrcodeKey: String, callback: @escaping (LoginQrcodeCheckData)->Void, fail: @escaping (String)->Void) {
+        AF.request("https://passport.bilibili.com/x/passport-login/web/qrcode/poll?qrcode_key=" + qrcodeKey).responseString { response in
+            do {
+                switch response.result {
+                case let .success(value):
+                    let checkResult = try JSONDecoder().decode(LoginQrcodeCheckResult.self, from: value.data(using: .utf8)!)
+                    debugPrint(checkResult.code)
+                    if checkResult.code == 0 {
+                        callback(checkResult.data)
                     } else {
-                        fail("返回空白数据")
+                        fail(checkResult.message)
                     }
-                } else {
-                    fail("返回空白")
-                }
 
-            case let .failure(error):
-                print(error)
-                fail(error.localizedDescription)
+                case let .failure(error):
+                    print(error)
+                    fail(error.localizedDescription)
+                }
+            } catch {
+                print("getWebLoginQrcode.http.error")
+                fail("网络请求错误")
             }
         }
     }

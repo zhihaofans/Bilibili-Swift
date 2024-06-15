@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let pageTitleList = ["main": "Bilibili", "login": "登录", "reminder": "提醒事项"]
+    private let pageTitleList = ["main": "Bilibili", "login": "登录", "user": "个人中心"]
     @State private var showPageId = "login"
     @State private var showPageTitle = "Bilibili"
     var body: some View {
@@ -19,7 +19,6 @@ struct ContentView: View {
             case "login":
                 LoginView(showPageId: $showPageId)
             default:
-
                 Text("错误导航")
                     .font(.largeTitle)
                     .padding()
