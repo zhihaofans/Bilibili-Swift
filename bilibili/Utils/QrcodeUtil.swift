@@ -5,10 +5,11 @@
 //  Created by zzh on 2024/6/14.
 //
 
+import CoreImage.CIFilterBuiltins
 import Foundation
 import SwiftUI
-import CoreImage.CIFilterBuiltins
-class QrcodeUtil{
+
+class QrcodeUtil {
     private let context = CIContext()
     private let filter = CIFilter.qrCodeGenerator()
     func generateQRCode(from string: String) -> NSImage? {
