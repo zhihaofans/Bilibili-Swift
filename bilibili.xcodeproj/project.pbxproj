@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26CC202E2C1C84CF00E0A299 /* QrcodeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC202C2C1C84CF00E0A299 /* QrcodeUtil.swift */; };
 		26CC20302C1C84FB00E0A299 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC202F2C1C84FB00E0A299 /* LoginView.swift */; };
 		26CC20332C1C86A900E0A299 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20322C1C86A900E0A299 /* LoginService.swift */; };
-		26CC20362C1C87EB00E0A299 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC20352C1C87EB00E0A299 /* Alamofire */; };
 		26CC20392C1C887A00E0A299 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20382C1C887A00E0A299 /* LoginDataModel.swift */; };
 		26CC203B2C1C9BC600E0A299 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC203A2C1C9BC600E0A299 /* MainView.swift */; };
 		26CC203E2C1C9EBF00E0A299 /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC203D2C1C9EBF00E0A299 /* StringEx.swift */; };
+		26CC204E2C28845D00E0A299 /* SwiftUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC204D2C28845D00E0A299 /* SwiftUtils */; };
+		26CC20512C2885B100E0A299 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC20502C2885B100E0A299 /* Alamofire */; };
 		26FD041E2C1B4D7C0076245C /* bilibiliApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD041D2C1B4D7C0076245C /* bilibiliApp.swift */; };
 		26FD04202C1B4D7C0076245C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD041F2C1B4D7C0076245C /* ContentView.swift */; };
 		26FD04222C1B4D7D0076245C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FD04212C1B4D7D0076245C /* Assets.xcassets */; };
@@ -21,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26CC202C2C1C84CF00E0A299 /* QrcodeUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrcodeUtil.swift; sourceTree = "<group>"; };
 		26CC202F2C1C84FB00E0A299 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		26CC20322C1C86A900E0A299 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		26CC20382C1C887A00E0A299 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
@@ -40,21 +39,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26CC20362C1C87EB00E0A299 /* Alamofire in Frameworks */,
+				26CC204E2C28845D00E0A299 /* SwiftUtils in Frameworks */,
+				26CC20512C2885B100E0A299 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26CC202D2C1C84CF00E0A299 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				26CC202C2C1C84CF00E0A299 /* QrcodeUtil.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		26CC20312C1C855000E0A299 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +93,6 @@
 				26CC203C2C1C9EA000E0A299 /* SwiftEx */,
 				26CC20372C1C886400E0A299 /* Models */,
 				26CC20312C1C855000E0A299 /* Services */,
-				26CC202D2C1C84CF00E0A299 /* Utils */,
 				26FD042C2C1B4E520076245C /* Views */,
 				26FD041D2C1B4D7C0076245C /* bilibiliApp.swift */,
 				26FD041F2C1B4D7C0076245C /* ContentView.swift */,
@@ -146,7 +137,8 @@
 			);
 			name = bilibili;
 			packageProductDependencies = (
-				26CC20352C1C87EB00E0A299 /* Alamofire */,
+				26CC204D2C28845D00E0A299 /* SwiftUtils */,
+				26CC20502C2885B100E0A299 /* Alamofire */,
 			);
 			productName = bilibili;
 			productReference = 26FD041A2C1B4D7C0076245C /* bilibili.app */;
@@ -177,7 +169,8 @@
 			);
 			mainGroup = 26FD04112C1B4D7C0076245C;
 			packageReferences = (
-				26CC20342C1C87EB00E0A299 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				26CC204C2C28845D00E0A299 /* XCRemoteSwiftPackageReference "SwiftUtils" */,
+				26CC204F2C2885B100E0A299 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 26FD041B2C1B4D7C0076245C /* Products */;
 			projectDirPath = "";
@@ -208,7 +201,6 @@
 				26FD04202C1B4D7C0076245C /* ContentView.swift in Sources */,
 				26CC203B2C1C9BC600E0A299 /* MainView.swift in Sources */,
 				26CC20392C1C887A00E0A299 /* LoginDataModel.swift in Sources */,
-				26CC202E2C1C84CF00E0A299 /* QrcodeUtil.swift in Sources */,
 				26CC20332C1C86A900E0A299 /* LoginService.swift in Sources */,
 				26CC203E2C1C9EBF00E0A299 /* StringEx.swift in Sources */,
 				26CC20302C1C84FB00E0A299 /* LoginView.swift in Sources */,
@@ -343,10 +335,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bilibili/bilibili.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"bilibili/Preview Content\"";
+				DEVELOPMENT_TEAM = 7PDM8RVDK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -368,10 +362,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bilibili/bilibili.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"bilibili/Preview Content\"";
+				DEVELOPMENT_TEAM = 7PDM8RVDK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -411,20 +407,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		26CC20342C1C87EB00E0A299 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		26CC204C2C28845D00E0A299 /* XCRemoteSwiftPackageReference "SwiftUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zhihaofans/SwiftUtils";
+			requirement = {
+				kind = exactVersion;
+				version = "0.0.5-fix";
+			};
+		};
+		26CC204F2C2885B100E0A299 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		26CC20352C1C87EB00E0A299 /* Alamofire */ = {
+		26CC204D2C28845D00E0A299 /* SwiftUtils */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26CC20342C1C87EB00E0A299 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 26CC204C2C28845D00E0A299 /* XCRemoteSwiftPackageReference "SwiftUtils" */;
+			productName = SwiftUtils;
+		};
+		26CC20502C2885B100E0A299 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26CC204F2C2885B100E0A299 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

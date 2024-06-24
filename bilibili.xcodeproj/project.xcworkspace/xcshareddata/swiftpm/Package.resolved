@@ -1,13 +1,22 @@
 {
-  "originHash" : "11b78eba97192d19796cff581fdf69b3e65b441188b1448a1b67e5d7b825a354",
+  "originHash" : "408f09aa743b00f8ca59d7a7719affde4214099d8d1a47d1ae8933640833b461",
   "pins" : [
     {
       "identity" : "alamofire",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire",
       "state" : {
-        "branch" : "master",
-        "revision" : "b5c8945616aceab4c1afc96505314cb1a2947e7c"
+        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
+        "version" : "5.9.1"
+      }
+    },
+    {
+      "identity" : "swiftutils",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/zhihaofans/SwiftUtils",
+      "state" : {
+        "revision" : "6a087d86ff9d463d2011227d09718a6c6ca69882",
+        "version" : "0.0.5-fix"
       }
     }
   ],

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUtils
 
 struct LoginView: View {
     @Binding var showPageId: String
@@ -46,6 +47,7 @@ struct LoginView: View {
         Button(action: {
             self.loginService.checkWebLoginQrcode(qrcodeKey: self.qrcodeKey) { checkResult in
                 if checkResult.code == 0 {
+                    let setSu = KeychainUtil().saveString(forKey: "bilibili.login.refresh_token", value: checkResult.refresh_token)
                 } else {
                     showingAlert = true
                     alertText = checkResult.message
@@ -68,7 +70,7 @@ struct LoginView: View {
             self.loginService.getWebLoginQrcode { loginData in
                 if !loginData.qrcode_key.isEmpty {
                     qrcodeKey = loginData.qrcode_key
-                    let qrcodeUrl = "https://passport.bilibili.com/h5-app/passport/login/scan?navhide=1&from=&qrcode_key=" + qrcodeKey
+                    // let qrcodeUrl = "https://passport.bilibili.com/h5-app/passport/login/scan?navhide=1&from=&qrcode_key=" + qrcodeKey
                     self.qrCodeImage = QrcodeUtil().generateQRCode(from: loginData.url)
                 } else {
                     alertText = "空白二维码"
