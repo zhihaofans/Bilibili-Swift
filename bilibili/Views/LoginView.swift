@@ -15,6 +15,7 @@ struct LoginView: View {
     @State private var alertText: String = "未知错误"
     @State private var qrCodeImage: NSImage? = nil
     @State private var qrcodeKey: String = ""
+    @State private var qrcodeText: String = "未登录"
     private let context = CIContext()
     private let filter = CIFilter.qrCodeGenerator()
     private let loginService = LoginService()
@@ -42,7 +43,7 @@ struct LoginView: View {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
         } else {
-            Text("生成中...")
+            Text(qrcodeText)
         }
         Button(action: {
             self.loginService.checkWebLoginQrcode(qrcodeKey: self.qrcodeKey) { checkResult in
@@ -67,22 +68,31 @@ struct LoginView: View {
             Text(alertText)
         }
         .onAppear {
-            self.loginService.getWebLoginQrcode { loginData in
-                if !loginData.qrcode_key.isEmpty {
-                    qrcodeKey = loginData.qrcode_key
-                    // let qrcodeUrl = "https://passport.bilibili.com/h5-app/passport/login/scan?navhide=1&from=&qrcode_key=" + qrcodeKey
-                    self.qrCodeImage = QrcodeUtil().generateQRCode(from: loginData.url)
-                } else {
-                    alertText = "空白二维码"
+            let bili_jct = LoginService().getCookieKey(key: "bili_jct")
+            let SESSDATA = LoginService().getCookieKey(key: "SESSDATA")
+            let DedeUserID = LoginService().getCookieKey(key: "DedeUserID")
+            let DedeUserID__ckMd5 = LoginService().getCookieKey(key: "DedeUserID__ckMd5")
+            let sid = LoginService().getCookieKey(key: "sid")
+            print("\(String(describing: bili_jct))\n\(String(describing: SESSDATA))\n\(String(describing: DedeUserID))\n\(String(describing: DedeUserID__ckMd5))\n\(String(describing: sid))")
+            if DedeUserID != nil {
+                qrcodeText = "已登录"
+            } else {
+                self.loginService.getWebLoginQrcode { loginData in
+                    if !loginData.qrcode_key.isEmpty {
+                        qrcodeKey = loginData.qrcode_key
+                        // let qrcodeUrl = "https://passport.bilibili.com/h5-app/passport/login/scan?navhide=1&from=&qrcode_key=" + qrcodeKey
+                        self.qrCodeImage = QrcodeUtil().generateQRCode(from: loginData.url)
+                    } else {
+                        alertText = "空白二维码"
+                        showingAlert = true
+                    }
+                } fail: { errorMsg in
+
                     showingAlert = true
+                    alertText = errorMsg
                 }
-            } fail: { errorMsg in
-
-                showingAlert = true
-                alertText = errorMsg
+                // self.getQrcodeData()
             }
-
-            // self.getQrcodeData()
         }
         .padding()
     }
