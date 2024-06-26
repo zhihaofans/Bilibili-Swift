@@ -38,25 +38,30 @@ class LoginService {
             do {
                 switch response.result {
                 case let .success(value):
-                    if let headerFields = response.response?.allHeaderFields as? [String: String],
-                       let URL = response.request?.url
-                    {
-                        let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
-                        DispatchQueue.global(qos: .userInitiated).async {
-                            // 在这里执行耗时的任务
 
-                            self.setLoginCookies(cookies: cookies)
-                            // 完成后，在主线程更新 UI
-                            DispatchQueue.main.async {
-                                // 更新 UI
-                                print("保存cookies")
-                            }
-                        }
-                    }
                     let checkResult = try JSONDecoder().decode(LoginQrcodeCheckResult.self, from: value.data(using: .utf8)!)
                     debugPrint(checkResult.code)
                     if checkResult.code == 0 {
-                        callback(checkResult.data)
+                        if checkResult.data.code == 0 {
+                            if let headerFields = response.response?.allHeaderFields as? [String: String],
+                               let URL = response.request?.url
+                            {
+                                let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
+                                DispatchQueue.global(qos: .userInitiated).async {
+                                    // 在这里执行耗时的任务
+
+                                    self.setLoginCookies(cookies: cookies)
+                                    // 完成后，在主线程更新 UI
+                                    DispatchQueue.main.async {
+                                        // 更新 UI
+                                        print("保存cookies")
+                                    }
+                                }
+                            }
+                            callback(checkResult.data)
+                        } else {
+                            fail(checkResult.data.message)
+                        }
                     } else {
                         fail(checkResult.message)
                     }
