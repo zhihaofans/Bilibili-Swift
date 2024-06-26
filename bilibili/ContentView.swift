@@ -11,6 +11,7 @@ struct ContentView: View {
     private let pageTitleList = ["main": "Bilibili", "login": "登录", "user": "个人中心"]
     @State private var showPageId = "login"
     @State private var showPageTitle = "Bilibili"
+    @State private var isLogin = false
     var body: some View {
         VStack {
             switch showPageId.lowercased() {
@@ -28,6 +29,14 @@ struct ContentView: View {
                     Text("返回主页").font(.title)
                 }
             }
+        }.toolbar {
+            // 增加数据
+            Button("Home", systemImage: "house", action: {
+                showPageId = "main"
+            })
+            Button("User", systemImage: "person", action: {
+                showPageId = "login"
+            })
         }
         .onChange(of: showPageId) {
             // 当 a 改变时，更新 b
@@ -36,12 +45,16 @@ struct ContentView: View {
         .onAppear {
             // self.getQrcodeData()
             showPageTitle = getPageTitle()
+            if LoginService().getUid()! = nil {
+                isLogin = true
+                showPageId = "main"
+            }
         }.navigationTitle(showPageTitle)
         .padding()
     }
 
     private func getPageTitle() -> String {
-        return pageTitleList[showPageId] ?? "未知导航"
+        return pageTitleList[showPageId] ?? "哔哩哔哩"
     }
 }
 

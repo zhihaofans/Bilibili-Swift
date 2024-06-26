@@ -91,4 +91,24 @@ class LoginService {
     func setCookie(cookie: String)->Bool {
         return KeychainUtil().saveString(forKey: keychainHeader + ".cookie", value: cookie)
     }
+
+    func getbili_jct()->String {
+        return getCookieKey(key: "bili_jct")
+    }
+
+    func getDedeUserID__ckMd5()->String {
+        return getCookieKey(key: "DedeUserID__ckMd5")
+    }
+
+    func getSESSDATA()->String {
+        return getCookieKey(key: "SESSDATA")
+    }
+
+    func getUid()->String {
+        return self .. getCookieKey(key: "DedeUserID")
+    }
+
+    func getSid()->String {
+        return getCookieKey(key: "sid")
+    }
 }

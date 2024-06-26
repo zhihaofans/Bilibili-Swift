@@ -76,6 +76,7 @@ struct LoginView: View {
             print("\(String(describing: bili_jct))\n\(String(describing: SESSDATA))\n\(String(describing: DedeUserID))\n\(String(describing: DedeUserID__ckMd5))\n\(String(describing: sid))")
             if DedeUserID != nil {
                 qrcodeText = "已登录"
+                showPageId="main"
             } else {
                 self.loginService.getWebLoginQrcode { loginData in
                     if !loginData.qrcode_key.isEmpty {
