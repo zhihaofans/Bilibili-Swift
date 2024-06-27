@@ -16,6 +16,8 @@
 		26CC20542C2DAE0C00E0A299 /* CheckinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20522C2DAE0C00E0A299 /* CheckinService.swift */; };
 		26CC20552C2DAE0C00E0A299 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20532C2DAE0C00E0A299 /* UserService.swift */; };
 		26CC20572C2DAE1E00E0A299 /* CheckinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20562C2DAE1E00E0A299 /* CheckinModel.swift */; };
+		26CC20592C2DC6EB00E0A299 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20582C2DC6EB00E0A299 /* UserView.swift */; };
+		26CC205B2C2DC93D00E0A299 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC205A2C2DC93D00E0A299 /* UserModel.swift */; };
 		26FD041E2C1B4D7C0076245C /* bilibiliApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD041D2C1B4D7C0076245C /* bilibiliApp.swift */; };
 		26FD04202C1B4D7C0076245C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD041F2C1B4D7C0076245C /* ContentView.swift */; };
 		26FD04222C1B4D7D0076245C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FD04212C1B4D7D0076245C /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		26CC20522C2DAE0C00E0A299 /* CheckinService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckinService.swift; sourceTree = "<group>"; };
 		26CC20532C2DAE0C00E0A299 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		26CC20562C2DAE1E00E0A299 /* CheckinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckinModel.swift; path = bilibili/Models/CheckinModel.swift; sourceTree = SOURCE_ROOT; };
+		26CC20582C2DC6EB00E0A299 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		26CC205A2C2DC93D00E0A299 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		26FD041A2C1B4D7C0076245C /* bilibili.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bilibili.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26FD041D2C1B4D7C0076245C /* bilibiliApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bilibiliApp.swift; sourceTree = "<group>"; };
 		26FD041F2C1B4D7C0076245C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 			children = (
 				26CC20562C2DAE1E00E0A299 /* CheckinModel.swift */,
 				26CC20382C1C887A00E0A299 /* LoginDataModel.swift */,
+				26CC205A2C2DC93D00E0A299 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			children = (
 				26CC202F2C1C84FB00E0A299 /* LoginView.swift */,
 				26CC203A2C1C9BC600E0A299 /* MainView.swift */,
+				26CC20582C2DC6EB00E0A299 /* UserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,8 +209,10 @@
 				26CC20392C1C887A00E0A299 /* LoginDataModel.swift in Sources */,
 				26CC20332C1C86A900E0A299 /* LoginService.swift in Sources */,
 				26CC20542C2DAE0C00E0A299 /* CheckinService.swift in Sources */,
+				26CC20592C2DC6EB00E0A299 /* UserView.swift in Sources */,
 				26CC20302C1C84FB00E0A299 /* LoginView.swift in Sources */,
 				26FD041E2C1B4D7C0076245C /* bilibiliApp.swift in Sources */,
+				26CC205B2C2DC93D00E0A299 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

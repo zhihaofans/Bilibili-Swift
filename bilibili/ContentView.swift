@@ -19,8 +19,8 @@ struct ContentView: View {
                 MainView(showPageId: $showPageId)
             case "login":
                 LoginView(showPageId: $showPageId)
-            //case "user":
-                //UserView(showPageId: $showPageId)
+            case "user":
+                UserView(showPageId: $showPageId)
             default:
                 Text("计划中...")
                     .font(.largeTitle)
@@ -31,12 +31,18 @@ struct ContentView: View {
             Button("Home", systemImage: "house", action: {
                 showPageId = "main"
             })
+            Button("Fav", systemImage: "star", action: {
+                showPageId = "main"
+            })
             Button("User", systemImage: "person", action: {
                 if isLogin {
                     showPageId = "user"
-                }else{
+                } else {
                     showPageId = "login"
                 }
+            })
+            Button("Setting", systemImage: "gear", action: {
+                showPageId = "setting"
             })
         }
         .onChange(of: showPageId) {
@@ -49,7 +55,7 @@ struct ContentView: View {
             isLogin = LoginService().isLogin()
             if isLogin {
                 showPageId = "main"
-            }else{
+            } else {
                 showPageId = "login"
             }
         }.navigationTitle(showPageTitle)
