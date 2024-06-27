@@ -11,7 +11,6 @@
 		26CC20332C1C86A900E0A299 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20322C1C86A900E0A299 /* LoginService.swift */; };
 		26CC20392C1C887A00E0A299 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20382C1C887A00E0A299 /* LoginDataModel.swift */; };
 		26CC203B2C1C9BC600E0A299 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC203A2C1C9BC600E0A299 /* MainView.swift */; };
-		26CC203E2C1C9EBF00E0A299 /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC203D2C1C9EBF00E0A299 /* StringEx.swift */; };
 		26CC204E2C28845D00E0A299 /* SwiftUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC204D2C28845D00E0A299 /* SwiftUtils */; };
 		26CC20512C2885B100E0A299 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC20502C2885B100E0A299 /* Alamofire */; };
 		26CC20542C2DAE0C00E0A299 /* CheckinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20522C2DAE0C00E0A299 /* CheckinService.swift */; };
@@ -28,7 +27,6 @@
 		26CC20322C1C86A900E0A299 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		26CC20382C1C887A00E0A299 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		26CC203A2C1C9BC600E0A299 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		26CC203D2C1C9EBF00E0A299 /* StringEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEx.swift; sourceTree = "<group>"; };
 		26CC20522C2DAE0C00E0A299 /* CheckinService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckinService.swift; sourceTree = "<group>"; };
 		26CC20532C2DAE0C00E0A299 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		26CC20562C2DAE1E00E0A299 /* CheckinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckinModel.swift; path = bilibili/Models/CheckinModel.swift; sourceTree = SOURCE_ROOT; };
@@ -72,14 +70,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		26CC203C2C1C9EA000E0A299 /* SwiftEx */ = {
-			isa = PBXGroup;
-			children = (
-				26CC203D2C1C9EBF00E0A299 /* StringEx.swift */,
-			);
-			path = SwiftEx;
-			sourceTree = "<group>";
-		};
 		26FD04112C1B4D7C0076245C = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +89,6 @@
 		26FD041C2C1B4D7C0076245C /* bilibili */ = {
 			isa = PBXGroup;
 			children = (
-				26CC203C2C1C9EA000E0A299 /* SwiftEx */,
 				26CC20372C1C886400E0A299 /* Models */,
 				26CC20312C1C855000E0A299 /* Services */,
 				26FD042C2C1B4E520076245C /* Views */,
@@ -213,7 +202,6 @@
 				26CC20572C2DAE1E00E0A299 /* CheckinModel.swift in Sources */,
 				26CC20392C1C887A00E0A299 /* LoginDataModel.swift in Sources */,
 				26CC20332C1C86A900E0A299 /* LoginService.swift in Sources */,
-				26CC203E2C1C9EBF00E0A299 /* StringEx.swift in Sources */,
 				26CC20542C2DAE0C00E0A299 /* CheckinService.swift in Sources */,
 				26CC20302C1C84FB00E0A299 /* LoginView.swift in Sources */,
 				26FD041E2C1B4D7C0076245C /* bilibiliApp.swift in Sources */,
