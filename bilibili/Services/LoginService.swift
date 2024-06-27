@@ -92,8 +92,12 @@ class LoginService {
         return KeychainUtil().saveString(forKey: keychainHeader + ".cookie", value: cookie)
     }
 
+    func getCookiesString()->String {
+        return "bili_jct=\(getbili_jct());DedeUserID__ckMd5=\(getDedeUserID__ckMd5());SESSDATA=\(getSESSDATA());DedeUserID=\(getUid())"
+    }
+
     func getbili_jct()->String {
-        return getCookieKey(key: "bili_jct")??
+        return getCookieKey(key: "bili_jct") ?? ""
     }
 
     func getDedeUserID__ckMd5()->String {
@@ -113,6 +117,6 @@ class LoginService {
     }
 
     func isLogin()->Bool {
-        return getUid().isNotEmpty() && getSESSDATA().isNotEmpty() && getbili_jct().isNotEmpty()
+        return getUid().isNotEmpty && getSESSDATA().isNotEmpty && getbili_jct().isNotEmpty
     }
 }
