@@ -93,25 +93,26 @@ class LoginService {
     }
 
     func getbili_jct()->String {
-        return getCookieKey(key: "bili_jct") ?""
+        return getCookieKey(key: "bili_jct")??
     }
 
     func getDedeUserID__ckMd5()->String {
-        return getCookieKey(key: "DedeUserID__ckMd5") ?""
+        return getCookieKey(key: "DedeUserID__ckMd5") ?? ""
     }
 
     func getSESSDATA()->String {
-        return getCookieKey(key: "SESSDATA") ?""
+        return getCookieKey(key: "SESSDATA") ?? ""
     }
 
     func getUid()->String {
-        return self .. getCookieKey(key: "DedeUserID") ?""
+        return getCookieKey(key: "DedeUserID") ?? ""
     }
 
     func getSid()->String {
-        return getCookieKey(key: "sid") ?""
+        return getCookieKey(key: "sid") ?? ""
     }
-    func isLogin()->Bool{
-        return self.getUid().isNotEmpty() && self.getSESSDATA().isNotEmpty() && self.getbili_jct(.isNotEmpty()
+
+    func isLogin()->Bool {
+        return getUid().isNotEmpty() && getSESSDATA().isNotEmpty() && getbili_jct().isNotEmpty()
     }
 }
