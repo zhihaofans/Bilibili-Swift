@@ -19,15 +19,12 @@ struct ContentView: View {
                 MainView(showPageId: $showPageId)
             case "login":
                 LoginView(showPageId: $showPageId)
+            //case "user":
+                //UserView(showPageId: $showPageId)
             default:
-                Text("错误导航")
+                Text("计划中...")
                     .font(.largeTitle)
                     .padding()
-                Button(action: {
-                    showPageId = "main"
-                }) {
-                    Text("返回主页").font(.title)
-                }
             }
         }.toolbar {
             // 增加数据
@@ -35,7 +32,11 @@ struct ContentView: View {
                 showPageId = "main"
             })
             Button("User", systemImage: "person", action: {
-                showPageId = "login"
+                if isLogin {
+                    showPageId = "user"
+                }else{
+                    showPageId = "login"
+                }
             })
         }
         .onChange(of: showPageId) {
@@ -45,9 +46,11 @@ struct ContentView: View {
         .onAppear {
             // self.getQrcodeData()
             showPageTitle = getPageTitle()
-            if LoginService().getUid()! = nil {
-                isLogin = true
+            isLogin = LoginService().isLogin()
+            if isLogin {
                 showPageId = "main"
+            }else{
+                showPageId = "login"
             }
         }.navigationTitle(showPageTitle)
         .padding()
