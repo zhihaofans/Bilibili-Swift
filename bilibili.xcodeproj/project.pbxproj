@@ -14,6 +14,9 @@
 		26CC203E2C1C9EBF00E0A299 /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC203D2C1C9EBF00E0A299 /* StringEx.swift */; };
 		26CC204E2C28845D00E0A299 /* SwiftUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC204D2C28845D00E0A299 /* SwiftUtils */; };
 		26CC20512C2885B100E0A299 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC20502C2885B100E0A299 /* Alamofire */; };
+		26CC20542C2DAE0C00E0A299 /* CheckinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20522C2DAE0C00E0A299 /* CheckinService.swift */; };
+		26CC20552C2DAE0C00E0A299 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20532C2DAE0C00E0A299 /* UserService.swift */; };
+		26CC20572C2DAE1E00E0A299 /* CheckinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20562C2DAE1E00E0A299 /* CheckinModel.swift */; };
 		26FD041E2C1B4D7C0076245C /* bilibiliApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD041D2C1B4D7C0076245C /* bilibiliApp.swift */; };
 		26FD04202C1B4D7C0076245C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD041F2C1B4D7C0076245C /* ContentView.swift */; };
 		26FD04222C1B4D7D0076245C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FD04212C1B4D7D0076245C /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 		26CC20382C1C887A00E0A299 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		26CC203A2C1C9BC600E0A299 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		26CC203D2C1C9EBF00E0A299 /* StringEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEx.swift; sourceTree = "<group>"; };
+		26CC20522C2DAE0C00E0A299 /* CheckinService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckinService.swift; sourceTree = "<group>"; };
+		26CC20532C2DAE0C00E0A299 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		26CC20562C2DAE1E00E0A299 /* CheckinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckinModel.swift; path = bilibili/Models/CheckinModel.swift; sourceTree = SOURCE_ROOT; };
 		26FD041A2C1B4D7C0076245C /* bilibili.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bilibili.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26FD041D2C1B4D7C0076245C /* bilibiliApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bilibiliApp.swift; sourceTree = "<group>"; };
 		26FD041F2C1B4D7C0076245C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +56,8 @@
 		26CC20312C1C855000E0A299 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				26CC20522C2DAE0C00E0A299 /* CheckinService.swift */,
+				26CC20532C2DAE0C00E0A299 /* UserService.swift */,
 				26CC20322C1C86A900E0A299 /* LoginService.swift */,
 			);
 			path = Services;
@@ -58,6 +66,7 @@
 		26CC20372C1C886400E0A299 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				26CC20562C2DAE1E00E0A299 /* CheckinModel.swift */,
 				26CC20382C1C887A00E0A299 /* LoginDataModel.swift */,
 			);
 			path = Models;
@@ -200,9 +209,12 @@
 			files = (
 				26FD04202C1B4D7C0076245C /* ContentView.swift in Sources */,
 				26CC203B2C1C9BC600E0A299 /* MainView.swift in Sources */,
+				26CC20552C2DAE0C00E0A299 /* UserService.swift in Sources */,
+				26CC20572C2DAE1E00E0A299 /* CheckinModel.swift in Sources */,
 				26CC20392C1C887A00E0A299 /* LoginDataModel.swift in Sources */,
 				26CC20332C1C86A900E0A299 /* LoginService.swift in Sources */,
 				26CC203E2C1C9EBF00E0A299 /* StringEx.swift in Sources */,
+				26CC20542C2DAE0C00E0A299 /* CheckinService.swift in Sources */,
 				26CC20302C1C84FB00E0A299 /* LoginView.swift in Sources */,
 				26FD041E2C1B4D7C0076245C /* bilibiliApp.swift in Sources */,
 			);
