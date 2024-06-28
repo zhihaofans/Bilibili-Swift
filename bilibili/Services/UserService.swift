@@ -9,7 +9,7 @@ import Foundation
 import SwiftUtils
 
 class UserService {
-    func getInfo(callback: @escaping (LiveCheckinResult)->Void, fail: @escaping (String)->Void) {
+    func getUserInfo(callback: @escaping (UserInfoResult)->Void, fail: @escaping (String)->Void) {
         let headers: HTTPHeaders = [
             "Cookie": LoginService().getCookiesString(),
             "Accept": "application/json;charset=UTF-8",
@@ -18,7 +18,7 @@ class UserService {
             do {
                 switch response.result {
                 case let .success(value):
-                    let result = try JSONDecoder().decode(LiveCheckinResult.self, from: value.data(using: .utf8)!)
+                    let result = try JSONDecoder().decode(UserInfoResult.self, from: value.data(using: .utf8)!)
                     debugPrint(result.code)
                     if result.code == 0 {
                         callback(result)
@@ -30,8 +30,8 @@ class UserService {
                     fail(error.localizedDescription)
                 }
             } catch {
-                print("mangaCheckin.http.error")
-                fail("网络请求错误")
+                print("http.error")
+                fail("网络请求错误:\(error.localizedDescription)")
             }
         }
     }
