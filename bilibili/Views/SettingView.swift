@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct SettingView: View {
+    @Binding var showPageId: String
+    private let settingIdList = ["bili_jct", "DedeUserID__ckMd5", "SESSDATA", "DedeUserID", "sid"]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("登录数据")
+            List(settingIdList, id: \.self) { it in
+                Text("\(it): \(String(LoginService().getCookieKey(key: it) ?? ""))")
+            }
+        }
     }
-}
-
-#Preview {
-    SettingView()
 }

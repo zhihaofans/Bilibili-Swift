@@ -15,7 +15,7 @@ struct MainView: View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         Button(action: {
             CheckinService().mangaCheckin { result in
-                alertText = result.message
+                alertText = result.msg
                 showingAlert = true
             } fail: { error in
                 showingAlert = true

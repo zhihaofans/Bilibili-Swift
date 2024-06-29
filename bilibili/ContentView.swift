@@ -21,6 +21,8 @@ struct ContentView: View {
                 LoginView(showPageId: $showPageId)
             case "user":
                 UserView(showPageId: $showPageId)
+            case "setting":
+                SettingView(showPageId: $showPageId)
             default:
                 Text("计划中...")
                     .font(.largeTitle)

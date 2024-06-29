@@ -9,13 +9,15 @@ import Foundation
 
 struct UserInfoResult: Codable {
     let code: Int
+    let ttl: Int
     let message: String
-    let data: UserInfoData?
+    let data: UserInfoData
 }
+
 struct UserInfoData: Codable {
     let isLogin: Bool
-    let face: String
-    let mid: Int
-    let uname: String
-    let money: Int //拥有硬币数
+    let face: String?
+    let mid: Int?
+    let uname: String?
+    //let money: Int? // 拥有硬币数
 }

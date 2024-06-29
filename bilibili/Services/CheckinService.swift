@@ -25,7 +25,7 @@ class CheckinService {
                     if result.code == 0 {
                         callback(result)
                     } else {
-                        fail("Code \(result.code): \(result.message)")
+                        fail("Code \(result.code): \(result.msg)")
                     }
                 case let .failure(error):
                     print(error)
