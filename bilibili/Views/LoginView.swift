@@ -49,14 +49,16 @@ struct LoginView: View {
             self.loginService.checkWebLoginQrcode(qrcodeKey: self.qrcodeKey) { checkResult in
                 if checkResult.code == 0 {
                     let setSu = KeychainUtil().saveString(forKey: "bilibili.login.refresh_token", value: checkResult.refresh_token)
-                } else {
+                    alertText = "保存登录数据" + setSu.string(trueStr: "成功", falseStr: "失败")
                     showingAlert = true
+                } else {
                     alertText = checkResult.message
+                    showingAlert = true
                 }
 
             } fail: { error in
-                showingAlert = true
                 alertText = error
+                showingAlert = true
             }
 
         }) {

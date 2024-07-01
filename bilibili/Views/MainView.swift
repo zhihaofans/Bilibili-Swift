@@ -42,5 +42,11 @@ struct MainView: View {
         }) {
             Text("直播签到").font(.title)
         }
+        Button(action: {}) {
+            Text("稍后再看").font(.title)
+        }
+        Button(action: {}) {
+            Text("历史记录").font(.title)
+        }
     }
 }

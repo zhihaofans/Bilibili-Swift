@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     private let pageTitleList = ["main": "Bilibili", "login": "登录", "user": "个人中心"]
-    @State private var showPageId = "login"
+    @State private var showPageId = "main"
     @State private var showPageTitle = "Bilibili"
     @State private var isLogin = false
     var body: some View {
