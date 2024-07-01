@@ -21,16 +21,21 @@ struct UserInfoData: Codable {
     let mid: Int?
     let uname: String?
     let money: Double? // 拥有硬币数
-    let wallet: UserInfoBcoin? //B币信息
+    let wallet: UserInfoBcoin? // B币信息
     let vipStatus: Int?
     let vipDueDate: Int?
-    let mid: Int?
+    // let mid: Int?
+    func getBcoin() -> Double {
+        return self.wallet?.bcoin_balance ?? 0
+    }
 }
+
 struct UserInfoWbi: Codable {
     let img_url: String
     let sub_url: String
 }
+
 struct UserInfoBcoin: Codable {
-    let bcoin_balance: Int // 拥有B币数
-    let coupon_balance: Int // 每月奖励B币数
+    let bcoin_balance: Double // 拥有B币数
+    let coupon_balance: Double // 每月奖励B币数
 }
