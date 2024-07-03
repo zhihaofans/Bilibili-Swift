@@ -12,6 +12,8 @@ struct UserView: View {
     @State var userFaceUrl = "https://i0.hdslb.com/bfs/static/jinkela/long/images/vip-login-banner.png"
     @State var userName = "未登录..."
     @State var bCoin = 0.0
+    @State var Battery = 0.0
+    @State var ybCoin = 0.0
     var body: some View {
         ScrollView {
             VStack {
@@ -29,6 +31,8 @@ struct UserView: View {
                     .font(.largeTitle)
                     .padding()
                 Label(String(bCoin), systemImage: "bitcoinsign.circle").font(.title2)
+                Label(String(ybCoin), systemImage: "dollarsign.circle").font(.title2)
+                Label(String(Battery), systemImage: "battery.100").font(.title2)
 
             }.onAppear {
                 // TODO: 加载个人信息、头像
@@ -38,6 +42,8 @@ struct UserView: View {
                         userFaceUrl = userData.face!
                         userName = userData.uname!
                         bCoin = userData.getBcoin()
+                        ybCoin = userData.getBcoin()
+                        
                     } else {
                         userName = "加载失败:未登录"
                     }
