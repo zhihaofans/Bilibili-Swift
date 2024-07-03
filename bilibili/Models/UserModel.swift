@@ -28,10 +28,11 @@ struct UserInfoData: Codable {
     func getBcoin() -> Double {
         return self.wallet?.bcoin_balance ?? 0
     }
+
     func isVip() -> Bool {
         if self.vipStatus == nil {
             return false
-        }else{
+        } else {
             return self.vipStatus == 1
         }
     }

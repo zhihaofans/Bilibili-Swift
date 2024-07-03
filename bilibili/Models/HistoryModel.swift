@@ -16,10 +16,11 @@ struct HistoryResult: Codable {
 struct HistoryData: Codable {
     let list: [HistoryList]
 }
+
 struct HistoryList: Codable {
     let title: String
     let author_name: String
     let author_face: String
     let author_mid: Int
-    let view_at	: Int
+    let view_at: Int
 }

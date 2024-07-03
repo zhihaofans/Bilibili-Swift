@@ -42,8 +42,10 @@ struct UserView: View {
                         userFaceUrl = userData.face!
                         userName = userData.uname!
                         bCoin = userData.getBcoin()
-                        ybCoin = userData.getBcoin()
-                        
+                        ybCoin = userData.money!
+                        if userData.isVip() {
+                            userName += " [VIP]"
+                        }
                     } else {
                         userName = "加载失败:未登录"
                     }

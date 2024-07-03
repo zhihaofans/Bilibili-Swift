@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct HistoryView: View {
-    ScrollView {
-        VStack {
-            
-        }.onAppear {
-            //TODO:加载历史数据
+    var body: some View {
+        ScrollView {
+            VStack {
+                ForEach(
+                    1...10,
+                    id: \.self
+                ) {
+                    Text("Item \($0)")
+                    Text("Item \($0)")
+                }
+            }.onAppear {
+                // TODO: 加载历史数据
+            }
         }
     }
+}
+
+#Preview {
+    HistoryView()
 }
