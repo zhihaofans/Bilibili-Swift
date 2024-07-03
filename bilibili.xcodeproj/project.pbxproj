@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2690FFCC2C35AF790024A52E /* LaterWatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2690FFCA2C35AF790024A52E /* LaterWatchModel.swift */; };
+		2690FFCD2C35AF790024A52E /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2690FFCB2C35AF790024A52E /* HistoryModel.swift */; };
+		2690FFCF2C35AF850024A52E /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2690FFCE2C35AF850024A52E /* HistoryService.swift */; };
+		2690FFD12C35AF8F0024A52E /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2690FFD02C35AF8F0024A52E /* HistoryView.swift */; };
 		26CC20302C1C84FB00E0A299 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC202F2C1C84FB00E0A299 /* LoginView.swift */; };
 		26CC20332C1C86A900E0A299 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20322C1C86A900E0A299 /* LoginService.swift */; };
 		26CC20392C1C887A00E0A299 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20382C1C887A00E0A299 /* LoginDataModel.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2690FFCA2C35AF790024A52E /* LaterWatchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaterWatchModel.swift; sourceTree = "<group>"; };
+		2690FFCB2C35AF790024A52E /* HistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		2690FFCE2C35AF850024A52E /* HistoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
+		2690FFD02C35AF8F0024A52E /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		26CC202F2C1C84FB00E0A299 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		26CC20322C1C86A900E0A299 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		26CC20382C1C887A00E0A299 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
@@ -60,6 +68,7 @@
 		26CC20312C1C855000E0A299 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2690FFCE2C35AF850024A52E /* HistoryService.swift */,
 				26CC20522C2DAE0C00E0A299 /* CheckinService.swift */,
 				26CC20532C2DAE0C00E0A299 /* UserService.swift */,
 				26CC20322C1C86A900E0A299 /* LoginService.swift */,
@@ -70,6 +79,8 @@
 		26CC20372C1C886400E0A299 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2690FFCB2C35AF790024A52E /* HistoryModel.swift */,
+				2690FFCA2C35AF790024A52E /* LaterWatchModel.swift */,
 				26CC20562C2DAE1E00E0A299 /* CheckinModel.swift */,
 				26CC20382C1C887A00E0A299 /* LoginDataModel.swift */,
 				26CC205A2C2DC93D00E0A299 /* UserModel.swift */,
@@ -119,6 +130,7 @@
 		26FD042C2C1B4E520076245C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2690FFD02C35AF8F0024A52E /* HistoryView.swift */,
 				26CC202F2C1C84FB00E0A299 /* LoginView.swift */,
 				26CC203A2C1C9BC600E0A299 /* MainView.swift */,
 				26CC20582C2DC6EB00E0A299 /* UserView.swift */,
@@ -208,14 +220,18 @@
 				26FD04202C1B4D7C0076245C /* ContentView.swift in Sources */,
 				26CC203B2C1C9BC600E0A299 /* MainView.swift in Sources */,
 				26CC20552C2DAE0C00E0A299 /* UserService.swift in Sources */,
+				2690FFCC2C35AF790024A52E /* LaterWatchModel.swift in Sources */,
 				26CC20572C2DAE1E00E0A299 /* CheckinModel.swift in Sources */,
 				26CC20392C1C887A00E0A299 /* LoginDataModel.swift in Sources */,
 				26CC20332C1C86A900E0A299 /* LoginService.swift in Sources */,
+				2690FFCF2C35AF850024A52E /* HistoryService.swift in Sources */,
 				26CC20542C2DAE0C00E0A299 /* CheckinService.swift in Sources */,
+				2690FFD12C35AF8F0024A52E /* HistoryView.swift in Sources */,
 				26CC20592C2DC6EB00E0A299 /* UserView.swift in Sources */,
 				26CC20302C1C84FB00E0A299 /* LoginView.swift in Sources */,
 				26CC205D2C3061C000E0A299 /* SettingView.swift in Sources */,
 				26FD041E2C1B4D7C0076245C /* bilibiliApp.swift in Sources */,
+				2690FFCD2C35AF790024A52E /* HistoryModel.swift in Sources */,
 				26CC205B2C2DC93D00E0A299 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
