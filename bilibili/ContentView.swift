@@ -23,6 +23,8 @@ struct ContentView: View {
                 UserView(showPageId: $showPageId)
             case "setting":
                 SettingView(showPageId: $showPageId)
+            case "history":
+                HistoryView()
             default:
                 Text("计划中...")
                     .font(.largeTitle)
@@ -34,7 +36,7 @@ struct ContentView: View {
                 showPageId = "main"
             })
             Button("Fav", systemImage: "star", action: {
-                showPageId = "main"
+                showPageId = "history"
             })
             Button("User", systemImage: "person", action: {
                 if isLogin {
