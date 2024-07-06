@@ -8,31 +8,48 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @State var isError=false
+    @State var errorStr=""
+    @State var historyList: [HistoryItem]
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(
-                    1 ... 10,
-                    id: \.self
-                ) {
-                    HistoryItemView(coverUrl:  "https://http.cat/images/200.jpg", title: "title \($0)", author: "作者 \($0)")
+                if isError {
+                    Text(errorStr).font(.largeTitle)
+                } else {
+                    ForEach(
+                        historyList,
+                        id: \.self
+                    ) {
+                        // HistoryItemView(coverUrl: "https://http.cat/images/200.jpg", title: "title \($0)", author: "作者 \($0)")
+                        Text("\($0)")
+                    }
                 }
             }.onAppear {
                 // TODO: 加载历史数据
+                HistoryService().getHistory { result in
+                    if result.data.list.isEmpty {
+                        isError=true
+                        errorStr="空白结果列表"
+                    } else {
+                        historyList=result.data.list
+                        isError=false
+                    }
+                } fail: { err in
+                    isError=true
+                    errorStr=err
+                }
             }
         }
     }
 }
 
 struct HistoryItemView: View {
-    var coverUrl: String
-    var title: String
-    var author: String
     var itemData: HistoryList
     var body: some View {
         VStack {
             HSplitView {
-                AsyncImage(url: URL(string: coverUrl)) { image in
+                AsyncImage(url: URL(string: itemData.getCover())) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -51,11 +68,6 @@ struct HistoryItemView: View {
         .contentShape(Rectangle()) // 加这行才实现可点击
         .onTapGesture {
             // TODO: onClick
-            
         }
     }
-}
-
-#Preview {
-    HistoryView()
 }

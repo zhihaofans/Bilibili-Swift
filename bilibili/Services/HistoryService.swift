@@ -9,7 +9,7 @@ import Foundation
 import SwiftUtils
 
 class HistoryService {
-    func getHistory(callback: @escaping (UserInfoResult)->Void, fail: @escaping (String)->Void) {
+    func getHistory(callback: @escaping (HistoryResult)->Void, fail: @escaping (String)->Void) {
         let headers: HTTPHeaders = [
             "Cookie": "SESSDATA=" + LoginService().getSESSDATA(),
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
@@ -20,7 +20,7 @@ class HistoryService {
                 switch response.result {
                 case let .success(value):
                     debugPrint(value)
-                    let result = try JSONDecoder().decode(UserInfoResult.self, from: value.data(using: .utf8)!)
+                    let result = try JSONDecoder().decode(HistoryResult.self, from: value.data(using: .utf8)!)
                     debugPrint(result)
                     if result.code == 0 {
                         callback(result)
