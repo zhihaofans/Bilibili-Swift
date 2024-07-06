@@ -23,4 +23,9 @@ struct HistoryList: Codable {
     let author_face: String
     let author_mid: Int
     let view_at: Int
+    let cover: String?
+    let covers: [String]?
+    func getCover() -> String {
+        return self.covers[0] ?? self.cover ?? "https://http.cat/images/404.jpg"
+    }
 }
