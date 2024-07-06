@@ -28,6 +28,7 @@ struct HistoryItemView: View {
     var coverUrl: String
     var title: String
     var author: String
+    var itemData: HistoryList
     var body: some View {
         VStack {
             HSplitView {
@@ -40,13 +41,18 @@ struct HistoryItemView: View {
                 }
                 .frame(width: 150, height: 84)
                 VStack {
-                    Text(title)
-                    Text(author)
+                    Text(itemData.title)
+                    Text(itemData.author_name)
                 }
                 .frame(width: 150)
             }
         }
         .frame(height: 100) // 将 VStack 的固定高度设置为100
+        .contentShape(Rectangle()) // 加这行才实现可点击
+        .onTapGesture {
+            // TODO: onClick
+            
+        }
     }
 }
 
