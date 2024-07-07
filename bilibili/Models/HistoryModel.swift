@@ -34,5 +34,14 @@ struct HistoryItem: Codable {
 struct HistoryItemInfo: Codable {
     private let business: String
     private let dt: Int
-    
+    let oid: Int? //稿件视频&剧集avid、直播、文章、文集
+    let epid: Int?
+    let bvid: String?
+    func getId()->String {
+        switch business{
+            case "archive":
+            return self.oid!
+            
+        }
+    }
 }
