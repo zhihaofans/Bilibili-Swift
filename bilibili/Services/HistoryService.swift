@@ -13,19 +13,23 @@ class HistoryService {
         let headers: HTTPHeaders = [
             "Cookie": "SESSDATA=" + LoginService().getSESSDATA(),
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-            "Accept": "application/json;charset=UTF-8",
+            // "Accept": "application/json;charset=UTF-8",
         ]
-        AF.request("https://api.bilibili.com/x/v2/history/toview/add", headers: headers).responseString { response in
+        AF.request("https://api.bilibili.com/x/web-interface/history/cursor", headers: headers).responseString { response in
             do {
                 switch response.result {
                 case let .success(value):
                     debugPrint(value)
-                    let result = try JSONDecoder().decode(HistoryResult.self, from: value.data(using: .utf8)!)
-                    debugPrint(result)
-                    if result.code == 0 {
-                        callback(result)
+                    if value == "Method Not Allowed\n" {
+                        fail("err:" + value)
                     } else {
-                        fail(result.message)
+                        let result = try JSONDecoder().decode(HistoryResult.self, from: value.data(using: .utf8)!)
+                        debugPrint(result)
+                        if result.code == 0 {
+                            callback(result)
+                        } else {
+                            fail(result.message)
+                        }
                     }
                 case let .failure(error):
                     print(error)
@@ -34,7 +38,6 @@ class HistoryService {
             } catch {
                 print("http.error")
                 debugPrint(error)
-
                 fail("网络请求错误:\(error.localizedDescription)")
             }
         }
