@@ -24,7 +24,7 @@ struct ContentView: View {
             case "setting":
                 SettingView(showPageId: $showPageId)
             case "history":
-                HistoryView()
+                HistoryView(historyList: [])
             default:
                 Text("计划中...")
                     .font(.largeTitle)
@@ -67,7 +67,7 @@ struct ContentView: View {
     }
 
     private func getPageTitle() -> String {
-        return pageTitleList[showPageId] ?? "哔哩哔哩"
+        return pageTitleList[showPageId] ?? showPageId.uppercased() // "哔哩哔哩"
     }
 }
 

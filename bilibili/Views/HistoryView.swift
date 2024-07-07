@@ -13,16 +13,12 @@ struct HistoryView: View {
     @State var historyList: [HistoryItem]
     var body: some View {
         ScrollView {
-            VStack {
+            LazyVStack {
                 if isError {
                     Text(errorStr).font(.largeTitle)
                 } else {
-                    ForEach(
-                        historyList,
-                        id: \.self
-                    ) {
-                        // HistoryItemView(coverUrl: "https://http.cat/images/200.jpg", title: "title \($0)", author: "作者 \($0)")
-                        Text("\($0)")
+                    ForEach(historyList, id: \.history.oid) { item in
+                        HistoryItemView(itemData: item)
                     }
                 }
             }.onAppear {
@@ -45,7 +41,7 @@ struct HistoryView: View {
 }
 
 struct HistoryItemView: View {
-    var itemData: HistoryList
+    var itemData: HistoryItem
     var body: some View {
         VStack {
             HSplitView {
@@ -58,16 +54,17 @@ struct HistoryItemView: View {
                 }
                 .frame(width: 150, height: 84)
                 VStack {
-                    Text(itemData.title)
+                    Text(itemData.title).font(.largeTitle)
                     Text(itemData.author_name)
                 }
-                .frame(width: 150)
+                // .frame(width: geometry.size.width)
             }
         }
         .frame(height: 100) // 将 VStack 的固定高度设置为100
         .contentShape(Rectangle()) // 加这行才实现可点击
         .onTapGesture {
             // TODO: onClick
+            print(itemData.getCover())
         }
     }
 }

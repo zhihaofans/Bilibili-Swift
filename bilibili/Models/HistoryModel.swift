@@ -27,21 +27,27 @@ struct HistoryItem: Codable {
     let covers: [String]?
     let history: HistoryItemInfo
     func getCover() -> String {
-        return self.covers?[0] ?? self.cover ?? "https://http.cat/images/404.jpg"
+        let cover = self.covers?[0] ?? self.cover ?? "https://http.cat/images/404.jpg"
+        return cover.replacingOccurrences(of: "http://", with: "https://")
     }
 }
 
 struct HistoryItemInfo: Codable {
     private let business: String
     private let dt: Int
-    let oid: Int? //稿件视频&剧集avid、直播、文章、文集
+    let oid: Int? // 稿件视频&剧集avid、直播、文章、文集
     let epid: Int?
     let bvid: String?
-    func getId()->String {
-        switch business{
+    func getId() -> String {
+        switch self.business {
             case "archive":
-            return self.oid!
-            
+                return self.bvid!
+            case "pgc":
+                return self.epid!.toString
+            case "live", "article", "article-list":
+                return self.oid!.toString
+            default:
+                return ""
         }
     }
 }

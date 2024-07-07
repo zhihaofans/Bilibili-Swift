@@ -45,7 +45,9 @@ struct MainView: View {
         Button(action: {}) {
             Text("稍后再看").font(.title)
         }
-        Button(action: {}) {
+        Button(action: {
+            showPageId = "history"
+        }) {
             Text("历史记录").font(.title)
         }
     }
