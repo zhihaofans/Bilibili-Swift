@@ -439,8 +439,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zhihaofans/SwiftUtils";
 			requirement = {
-				kind = exactVersion;
-				version = "0.0.5-fix";
+				branch = main;
+				kind = branch;
 			};
 		};
 		26CC204F2C2885B100E0A299 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
