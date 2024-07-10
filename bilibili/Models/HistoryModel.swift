@@ -50,4 +50,7 @@ struct HistoryItemInfo: Codable {
                 return ""
         }
     }
+    func getType() -> String{
+        return self.business
+    }
 }

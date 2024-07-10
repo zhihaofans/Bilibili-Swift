@@ -20,7 +20,7 @@ class HistoryService {
                 switch response.result {
                 case let .success(value):
                     debugPrint(value)
-                    if value == "Method Not Allowed\n" {
+                    if value.contains("Method Not Allowed")  {
                         fail("err:" + value)
                     } else {
                         let result = try JSONDecoder().decode(HistoryResult.self, from: value.data(using: .utf8)!)

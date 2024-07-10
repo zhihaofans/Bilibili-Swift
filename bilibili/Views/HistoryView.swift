@@ -64,7 +64,13 @@ struct HistoryItemView: View {
         .contentShape(Rectangle()) // 加这行才实现可点击
         .onTapGesture {
             // TODO: onClick
-            print(itemData.getCover())
+            
+            switch itemData.history.getType(){
+                case "archive":
+                
+                default:
+                print(itemData.getCover())
+            }
         }
     }
 }
